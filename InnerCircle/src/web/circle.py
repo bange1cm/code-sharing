@@ -22,8 +22,8 @@ def modify(circle: Circle) -> Circle:
     return service.modify(circle)
 
 @router.put("/")
-def replace(circle: Circle) -> Circle:
-    return service.replace(circle)
+def replace(oldRadius: float, newCircle: Circle) -> Circle:
+    return service.replace(oldRadius, newCircle)
 
 @router.delete("/{radius}")
 def delete(radius: float):

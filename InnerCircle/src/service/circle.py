@@ -11,8 +11,8 @@ def get_one(radius: float) -> Circle | None:
 def create(circle: Circle) -> Circle:
     return data.create(circle)
 
-def replace(radius, circle: Circle) -> Circle:
-    return data.replace(radius, circle)
+def replace(oldRadius: float, newCircle: Circle) -> Circle:
+    return data.replace(oldRadius, newCircle)
 
 def modify(radius, circle: Circle) -> Circle:
     return data.modify(radius, circle)

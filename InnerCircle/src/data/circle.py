@@ -40,8 +40,14 @@ def create(circle: Circle):
 def modify(circle: Circle):
     return circle
 
-def replace(circle: Circle):
-    return circle
+def replace(oldRadius: float, newCircle: Circle) -> Circle:
+    qry = """update circle
+    set radius=:radius
+    where radius=:radius_orig"""
+    params = model_to_dict(newCircle)
+    params["radius_orig"] = oldRadius
+    _ = curs.execute(qry, params)
+    return get_one(newCircle)
 
 def delete(circle: Circle):
     qry = "DELETE FROM circle WHERE radius=:radius"
