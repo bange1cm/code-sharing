@@ -18,8 +18,8 @@ def create(circle: Circle) -> Circle:
     return service.create(circle)
 
 @router.patch("/")
-def modify(circle: Circle) -> Circle:
-    return service.modify(circle)
+def modify(radius: float, circle: Circle) -> Circle:
+    return service.modify(radius, circle)
 
 @router.put("/")
 def replace(oldRadius: float, newCircle: Circle) -> Circle:
